@@ -4,10 +4,10 @@
   overflow: hidden;
   background-color: #1a1a1a;
   transition: transform 0.2s;
-  height: fit-content;
-  width: 280px;
-  margin: 5px;
-  display: inline-block;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .movie-card:hover {
@@ -31,11 +31,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.8)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.8));
   opacity: 0;
   transition: opacity 0.2s;
   display: flex;
@@ -48,7 +46,7 @@
   opacity: 1;
 }
 
-.fav-btn {
+.favorite-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -62,15 +60,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease-in-out;
 }
 
-.fav-btn:hover {
+.favorite-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.fav-btn.active {
-  color: #ff4757;
+.favorite-btn.active {
+  background-color: #ff4757;
+  color: white;
 }
 
 .movie-info {
@@ -100,7 +99,7 @@
     padding: 0.75rem;
   }
 
-  .fav-btn {
+  .favorite-btn {
     width: 32px;
     height: 32px;
     font-size: 1.2rem;
