@@ -8,8 +8,8 @@ function NavBar() {
     <nav className='navbar'> 
         <div className='navbar-brand'>
           <img src={logo} className='logo' />
-          <Link to='/'>Infinity Movies</Link>
         </div>
+        <Link to='/' className='title-infi'>Infinity Movies</Link>
         <div className='navbar-links'>
             <Link to='/' className='nav-link'>Home</Link>
             <Link to='/fav' className='nav-link'>Favorites</Link>
