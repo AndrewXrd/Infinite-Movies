@@ -15,13 +15,16 @@
 
 .title-infi {
   font-size: 1rem;
-  margin-right: 1200px;
-  transition: 0.2s
+  transition: 0.2s;
+  color: #fff;
+  text-decoration: none;
 }
 
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-links {
@@ -51,7 +54,6 @@
 
   .title-infi {
     font-size: 12px;
-    margin-right: 77px;
   }
 
   .navbar-links {
