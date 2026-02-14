@@ -1,10 +1,15 @@
 .home-container {
     min-height: 100vh;
     background-color: transparent;
-    /* Taken from body */
     color: white;
-    padding-top: 5rem;
-    /* space for navbar */
+    padding-top: 8rem;
+    /* space for stacked navbar on mobile */
+}
+
+@media (min-width: 768px) {
+    .home-container {
+        padding-top: 5rem;
+    }
 }
 
 /* Hero Section */
@@ -127,6 +132,10 @@
     max-width: 80rem;
     margin: 0 auto;
     padding: 2rem 1rem;
+}
+
+.content-section.has-no-hero {
+    padding-top: 2rem;
 }
 
 .section-title {

@@ -113,7 +113,7 @@ function Home({ searchQuery, aiMovies }) {
             )}
 
             {/* Content Section */}
-            <div className={`content-section ${aiMovies || searchQuery ? 'pt-32' : ''}`}>
+            <div className={`content-section ${aiMovies || searchQuery ? 'has-no-hero' : ''}`}>
 
                 {/* Section Title */}
                 <h2 className="section-title">
