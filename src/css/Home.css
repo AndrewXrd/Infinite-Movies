@@ -1,140 +1,217 @@
-.home {
-  padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
+.home-container {
+    min-height: 100vh;
+    background-color: transparent;
+    /* Taken from body */
+    color: white;
+    padding-top: 5rem;
+    /* space for navbar */
 }
 
-.search-form {
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  /* Modern glass look */
-  padding: 0.5rem;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.search-form:focus-within {
-  border-color: rgba(1, 208, 255, 0.5);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-}
-
-.search-input {
-  flex: 1;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-size: 1rem;
-  min-width: 0;
-  /* Prevents flex items from overflowing */
-}
-
-.search-input:focus {
-  outline: none;
-}
-
-.search-input::placeholder {
-  color: #888;
-}
-
-.search-btn {
-  padding: 0.75rem 2rem;
-  background: linear-gradient(90deg, #0d83d7 0%, #01d0ff 100%);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 15px rgba(13, 131, 215, 0.3);
-}
-
-.search-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(1, 208, 255, 0.4);
-}
-
-.search-btn:active {
-  transform: translateY(0);
-}
-
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 1rem 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.error-message,
-.loading-message {
-  text-align: center;
-  color: #ff4d4d;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
-
-.loading-message {
-  color: #01d0ff;
-}
-
-/* Perfect fit for mobile view */
-@media (max-width: 639px) {
-  .home {
-    padding: 1rem;
-  }
-
-  .search-form {
-    margin-bottom: 2rem;
-    padding: 0.4rem;
-    gap: 0.4rem;
-    /* Ensure it doesn't get too cramped on tiny screens */
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .search-input {
-    padding: 0.6rem 1rem;
-    font-size: 0.95rem;
-  }
-
-  .search-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    border-radius: 40px;
-  }
-
-  .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 400px) {
-  .search-form {
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 60vh;
     width: 100%;
-    padding: 0.3rem;
-  }
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
+}
 
-  .search-input {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-  }
+@media (min-width: 768px) {
+    .hero-section {
+        height: 80vh;
+    }
+}
 
-  .search-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        padding: 4rem;
+    }
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: #e5e7eb;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 3;
+}
+
+@media (min-width: 768px) {
+    .hero-description {
+        font-size: 1.25rem;
+    }
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        padding: 0.75rem 2rem;
+    }
+}
+
+.btn-primary {
+    background-color: #dc2626;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #b91c1c;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Content Section */
+.content-section {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    border-left: 4px solid #dc2626;
+    padding-left: 1rem;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* Search Bar (Moved for error state but mainly in navbar now) */
+
+.error-message {
+    color: #ef4444;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.loading-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 16rem;
+}
+
+.loading-spinner {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 9999px;
+    border-top: 2px solid #dc2626;
+    border-bottom: 2px solid #dc2626;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.movie-grid-item {
+    width: 100%;
+    max-width: 300px;
+    /* Responsive sizing logic matching previous Flexbox logic */
+    /* Mobile: 100%, SM: ~50%, LG: ~33%, XL: ~25% */
+}
+
+@media (min-width: 640px) {
+    .movie-grid-item {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .movie-grid-item {
+        width: calc(33.33% - 2rem);
+    }
+}
+
+@media (min-width: 1280px) {
+    .movie-grid-item {
+        width: calc(25% - 2rem);
+    }
+}
+
+
+.no-movies {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.25rem;
+    margin-top: 3rem;
 }

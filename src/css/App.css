@@ -1,8 +1,48 @@
-.main-content {
-  flex: 1;
-  padding: 2rem;
+:root {
+  --font-body: 'Outfit', sans-serif;
+  --color-primary: #1a1a1a;
+  --color-secondary: #00ffff;
+  --color-text: #ffffff;
+  --color-bg-dark: #000000;
+  --color-overlay: rgba(0, 0, 0, 0.6);
+}
+
+* {
   box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

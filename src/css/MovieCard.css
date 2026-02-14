@@ -1,107 +1,130 @@
 .movie-card {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #1a1a1a;
-  transition: transform 0.2s;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+    background-color: #111827;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .movie-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.movie-poster-container {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    width: 100%;
 }
 
 .movie-poster {
-  position: relative;
-  aspect-ratio: 2/3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
 }
 
-.movie-poster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.movie-card:hover .movie-poster {
+    transform: scale(1.1);
 }
 
 .movie-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.8));
-  opacity: 0;
-  transition: opacity 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1rem;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .movie-card:hover .movie-overlay {
-  opacity: 1;
+    opacity: 1;
 }
 
 .favorite-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: white;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 10;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .favorite-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .favorite-btn.active {
-  background-color: #ff4757;
-  color: white;
+    color: #ef4444;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.favorite-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #eab308;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .movie-info {
-  padding: 1rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5rem;
 }
 
-.movie-info h3 {
-  font-size: 1rem;
-  margin: 0;
+.movie-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.25;
+    transition: color 0.3s;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
 }
 
-.movie-info p {
-  color: #999;
-  font-size: 0.9rem;
+.movie-card:hover .movie-title {
+    color: #ef4444;
 }
 
-@media (max-width: 768px) {
-  .movie-card {
-    font-size: 0.9rem;
-  }
-
-  .movie-info {
-    padding: 0.75rem;
-  }
-
-  .favorite-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 1.2rem;
-  }
+.movie-footer {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
